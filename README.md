@@ -1,2 +1,3 @@
-# unstow
-Helpers and default configuration for stow (https://gnu.org/software/stow/
+Stow Helpers
+============
+Helpers and default configuration for [Stow](https://gnu.org/software/stow/).
