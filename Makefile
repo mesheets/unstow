@@ -9,7 +9,8 @@ bindir ?= ${exec_prefix}/${BINSUBDIR}
 
 
 install:
-	@echo "Installing commands"
+	@echo "Installing extended Stow commands"
+	test -d $(DESTDIR)$(bindir) || mkdir -p $(DESTDIR)$(bindir)
 	install -v --mode=755 unstow restow "$(DESTDIR)$(bindir)"
 	@echo "Installing user configuration for user \"root\" to $${HOME}"
 	install -v --mode=644 dot-stowrc "$(DESTDIR)$${HOME}/.stowrc"
@@ -17,7 +18,7 @@ install:
 	install -v --mode=644 dot-stowrc "$(DESTDIR)/home/$${SUDO_USER}/.stowrc"
 
 uninstall:
-	@echo "Uninstalling commands"
+	@echo "Uninstalling extended Stow commands"
 	rm -f "$(DESTDIR)$(bindir)/unstow"
 	rm -f "$(DESTDIR)$(bindir)/restow"
 	@echo "Uninstalling user configuration for user \"root\" from $${HOME}"
